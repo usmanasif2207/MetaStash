@@ -51,4 +51,3 @@ gem 'devise-jwt'
 gem 'rack-cors'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'byebug'
-gem 'activeadmin'

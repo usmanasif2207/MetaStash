@@ -51,3 +51,8 @@ gem 'devise-jwt'
 gem 'rack-cors'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'byebug'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'activeadmin'
+gem 'sass-rails'
+gem 'country_select', '~> 6.0'
+gem 'city-state'

@@ -28,11 +28,12 @@ class FeedbackController < ApplicationController
         end
     end
 
-    def resolved
+    def update
         @feedbacks = Feedback.all 
         @feedback = Feedback.find(params[:id])
         @feedback.is_resolved = true
         @feedback.save!
         render json: { status:200, data: @feedbacks}, status: :ok
     end 
+    
 end

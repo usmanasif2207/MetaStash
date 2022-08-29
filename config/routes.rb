@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get "/users/getDropLocations", to:"drop#show"
   get '/users/getTime', to: "utc#time"
   get '/users/getNGOs', to: "ngo#index"
+  get '/users/testUTC', to: "utc#test"
   
 end

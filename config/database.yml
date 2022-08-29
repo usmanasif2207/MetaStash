@@ -13,9 +13,9 @@ default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  database: 'rails_test2'
-  username: 'usmanasif'
-  password: 'admin'
+  database: 'postgres'
+  username: 'saif'
+  password: 'saif123'
 
 development:
   <<: *default

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users,
              controllers: {
                  sessions: 'users/sessions',
@@ -15,5 +17,7 @@ Rails.application.routes.draw do
   get '/users/getTime', to: "utc#time"
   get '/users/getNGOs', to: "ngo#index"
   get '/users/getActivePolls', to: "poll#index"
+  get '/users/testUTC', to: "utc#test"
+  
   
 end

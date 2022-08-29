@@ -8,17 +8,6 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   private
-  def verify_signed_out_user
-    # self.resource = User.find_by(email: params[:user][:email])
-    # if !resource.present?
-    #   render json: { message: 'User Does not exits!', status_code: 401 }, status: :ok
-    # els
-    if all_signed_out?
-      set_flash_message! :notice, :already_signed_out
-      respond_to_on_destroy
-    end
-  end
-
   def login_user
     if self.resource.valid_password?(params[:user][:password])
       self.resource = warden.authenticate!(auth_options)

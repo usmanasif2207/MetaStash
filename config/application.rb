@@ -1,5 +1,5 @@
 require_relative "boot"
-
+require "sprockets/railtie"
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
@@ -16,6 +16,8 @@ module SuperAwesomeApi
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Flash
     config.middleware.use config.session_store, config.session_options
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use Rack::MethodOverride
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

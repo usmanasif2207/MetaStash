@@ -47,7 +47,7 @@ class PollController < ApplicationController
     def index
         @polls = Poll.all
         if @polls.present?
-            @i = 1
+            @i = 0
                 # # create array with name with 4 objects...
                 @ngo1 = Ngo.find_by_id(@polls[@i].ngo_id_1_id)
                 @ngo2 = Ngo.find_by_id(@polls[@i].ngo_id_2_id)
@@ -60,7 +60,6 @@ class PollController < ApplicationController
                             { "Ngo_id": @polls[@i].ngo_id_4_id, "Name": @ngo4.name, "Votes": @polls[@i].ngo_4_votes}
                         ]
             render json: {status:200, data: @result }, status: :ok
-            # render json: {status:200, data: JSON.parse(@polls.to_json(:only => [:ngo_id_1_id,:ngo_id_1_id.name,:ngo_1_votes,:ngo_id_2_id,:ngo_2_votes,:ngo_id_3_id,:ngo_3_votes,:ngo_id_4_id,:ngo_4_votes]))}, status: :ok
         else
             render json: {message:"No Polls available to vote",status:404}, status: :ok
         end

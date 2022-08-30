@@ -22,6 +22,14 @@
     font-weight: bold;
     color: $form-label-color;
 }
+.l2 {
+    padding: 10px;
+    height: 50px;
+    margin-left: 2%;
+    margin-right: 1%;
+    font-weight: bold;
+    color: $form-label-color;
+}
 #drop_country{
     width: calc(79% - #{$text-input-total-padding});
     border: $border-width solid #c9d0d6;
@@ -31,4 +39,51 @@
     @include sans-family;
     outline: none;
     padding: 8px $text-input-horizontal-padding 7px;
+}
+#drop_province{
+    width: calc(35% - #{$text-input-total-padding});
+    border: $border-width solid #c9d0d6;
+    @include rounded;
+    font-size: 1em;
+    margin-bottom: 10px;
+    margin-left: -.3%;
+    @include sans-family;
+    outline: none;
+    padding: 8px $text-input-horizontal-padding 7px;
+}
+#drop_city{
+    width: calc(35.4% - #{$text-input-total-padding});
+    margin-left: 4%;
+    border: $border-width solid #c9d0d6;
+    @include rounded;
+    font-size: 1em;
+    margin-bottom: 10px;
+    @include sans-family;
+    outline: none;
+    padding: 8px $text-input-horizontal-padding 7px;
+}
+#drop_latitude{
+    width: calc(65% - #{$text-input-total-padding});
+    margin-left: 17.2%;
+}
+#drop_longitude{
+    padding-left: -2%;
+}
+#drop_latitude_input{
+    width: calc(56% - #{$text-input-total-padding});
+    font-size: 1em;
+    margin-bottom: 10px;
+    @include sans-family;
+    outline: none;
+    padding-left: 8px $text-input-horizontal-padding 7px;
+    display: inline-block;
+}
+#drop_longitude_input{
+    width: calc(47% - #{$text-input-total-padding});
+    font-size: 1em;
+    margin-bottom: 10px;
+    @include sans-family;
+    outline: none;
+    padding: 8px $text-input-horizontal-padding 7px;
+    display: inline-block;
 }

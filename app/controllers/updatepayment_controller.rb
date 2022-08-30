@@ -16,6 +16,7 @@ class UpdatepaymentController < ApplicationController
                     status: 200
                   }, status: :ok
             else 
+                @user.role = "unpaid"
                 render json: {
                     message: "Payment Status updated to false!",
                     status: 200

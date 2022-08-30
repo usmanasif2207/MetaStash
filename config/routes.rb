@@ -7,6 +7,7 @@ Rails.application.routes.draw do
                  registrations: 'users/registrations'
              }
   
+  post "/users/collectDrop", to:"drop#collect"
   post "/users/updateUserPaymentStatus", to:"updatepayment#update"
   post "/users/createFeedback", to:"feedback#create"
   post "/users/castVote", to:"votes#castvote"

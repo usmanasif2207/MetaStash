@@ -19,8 +19,14 @@ ActiveAdmin.register Drop do
     column :city
     column :country_name
     actions
-    
 end
+
+  member_action :bulk_create do
+    redirect_to new_admin_add_bulk_drop
+end
+  action_item :bulk_create   do
+    link_to "Create Bulk Drops" , new_admin_add_bulk_drop_path
+  end
 
 form do |f|
   f.inputs 'Register' do
@@ -44,15 +50,13 @@ form do |f|
 end
 
 ActiveAdmin.register Drop , as: "Add Bulk Drops" do
-  # menu false
+  menu false
+
   controller do
     def permitted_params
     params.permit!
     end              
   end
-
-  
-
   index do
     column :id
     column :reward_type 
@@ -67,9 +71,8 @@ ActiveAdmin.register Drop , as: "Add Bulk Drops" do
 end
 
   form do |f|
-f.inputs 'Upload Drop Locations as Bulk' do
-  f.input :bulk_file, as: :file 
-      end
-      f.actions 
+      panel "Upload Drop Locations as CSV File" do
+        render 'admin/import/bulk_form'
+    end
   end
 end

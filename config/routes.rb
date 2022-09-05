@@ -6,7 +6,12 @@ Rails.application.routes.draw do
                  sessions: 'users/sessions',
                  registrations: 'users/registrations'
              }
-  
+ #Additional Routes 
+ post "/import/drops", to:"drop#import"
+ get '/cities', to: "drop#city"
+ get '/province', to: "drop#province"
+#----------------------------------------------------------------
+
   post "/users/collectDrop", to:"drop#collect"
   post "/users/updateUserPaymentStatus", to:"updatepayment#update"
   post "/users/createFeedback", to:"feedback#create"

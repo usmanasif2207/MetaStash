@@ -6,6 +6,14 @@ ActiveAdmin.register Feedback do
     params.permit!
     end
     end
+
+    index do
+      selectable_column
+      column :id
+      column :message_heading
+      column :message_details
+      actions
+  end
  
     scope:all
     scope:resolved

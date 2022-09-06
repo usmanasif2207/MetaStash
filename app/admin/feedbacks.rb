@@ -12,6 +12,7 @@ ActiveAdmin.register Feedback do
       column :id
       column :message_heading
       column :message_details
+      column :is_resolved
       actions
   end
  

@@ -1,6 +1,6 @@
 class PollController < ApplicationController
     def create
-        @user = User.find_by_id(params[:player_id])
+        @user = User.find_by_id(params[:user_id])
         if @user.nil?
             render json: {
                 message: "Invalid UserId",
@@ -30,20 +30,36 @@ class PollController < ApplicationController
                 render json: {
                     message: "Invalid Ngo Id 4",
                      status: 404
+                  }, status: :ok                
+            elsif @user.role != "admin"
+                render json: {
+                    message: "Authorization Failed, Only admin can create poll",
+                     status: 401
                   }, status: :ok
             else
-                @poll=Poll.create(
-                    user_id: params[:player_id],
+                @polls = Poll.find_by_is_active(true)
+                if @polls.nil?
+                    @poll=Poll.create!(
+                    user_id: params[:user_id],
                     ngo_id_1_id: params[:ngo_id_1],
                     ngo_id_2_id: params[:ngo_id_2],
                     ngo_id_3_id: params[:ngo_id_3],
                     ngo_id_4_id: params[:ngo_id_4],
-                    is_active: params[:is_active]
                 )
-                render json: {message:"Poll created successfully!",data: JSON.parse(@poll.to_json(:only => [:id,:user_id, :ngo_id_1_id,:ngo_id_2_id,:ngo_id_3_id,:ngo_id_4_id])),status:200}, status: :ok
+                render json: {
+                    message: "Poll created successfully for 30 days",
+                     status: 404
+                  }, status: :ok
+                else
+                    render json: {
+                        message: "An Active Poll already exists",
+                         status: 404
+                      }, status: :ok
+                end
             end
         end
     end
+    
     def index
         @polls = Poll.all
         if @polls.present?

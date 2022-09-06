@@ -7,7 +7,7 @@ Rails.application.routes.draw do
                  registrations: 'users/registrations'
              }
  #Additional Routes 
- post "/import/drops", to:"drop#import"
+ post "/admin/add_bulk_drops/import/drops", to:"drop#import"
  get '/cities', to: "drop#city"
  get '/province', to: "drop#province"
 #----------------------------------------------------------------

@@ -9,6 +9,7 @@ ActiveAdmin.register Drop do
    
 
   index do
+    selectable_column
     column :id
     column :reward_type 
     column :reward_amount
@@ -42,6 +43,7 @@ form do |f|
     f.select :city, @cities
     f.input :latitude 
     f.input :longitude 
+    f.input :reward_amount
     f.input :is_active, as: :select, collection: [["Yes", true], ["No", false]], required: true
   end
     
@@ -58,6 +60,7 @@ ActiveAdmin.register Drop , as: "Add Bulk Drops" do
     end              
   end
   index do
+    selectable_column
     column :id
     column :reward_type 
     column :reward_amount
@@ -70,9 +73,10 @@ ActiveAdmin.register Drop , as: "Add Bulk Drops" do
     actions
 end
 
-  form do |f|
+
+form url:"/admin/add_bulk_drops/import/drops" , method: :post ,html: { multipart: true } do |f|
       panel "Upload Drop Locations as CSV File" do
         render 'admin/import/bulk_form'
-    end
+      end
   end
 end

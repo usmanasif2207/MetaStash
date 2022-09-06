@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_123350) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_06_115346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -111,7 +111,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_123350) do
     t.bigint "ngo_id_4_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.integer "ngo_1_votes", default: 0
     t.integer "ngo_2_votes", default: 0
     t.integer "ngo_3_votes", default: 0

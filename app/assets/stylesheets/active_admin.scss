@@ -35,7 +35,7 @@
     border: $border-width solid #c9d0d6;
     @include rounded;
     font-size: 1em;
-    margin-bottom: 10px;
+    margin-bottom: 17px;
     @include sans-family;
     outline: none;
     padding: 8px $text-input-horizontal-padding 7px;
@@ -72,7 +72,7 @@
 #drop_latitude_input{
     width: calc(56% - #{$text-input-total-padding});
     font-size: 1em;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     @include sans-family;
     outline: none;
     padding-left: 8px $text-input-horizontal-padding 7px;
@@ -81,9 +81,17 @@
 #drop_longitude_input{
     width: calc(47% - #{$text-input-total-padding});
     font-size: 1em;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     @include sans-family;
     outline: none;
+    padding: 8px $text-input-horizontal-padding 7px;
+    display: inline-block;
+}
+#drop_reward_amount{
+    width: calc(8% - #{$text-input-total-padding});
+    font-size: 1em;
+    margin-bottom: 5px;
+    @include sans-family;
     padding: 8px $text-input-horizontal-padding 7px;
     display: inline-block;
 }

@@ -4,4 +4,7 @@ class User < ApplicationRecord
          :registerable,
          jwt_revocation_strategy: JwtDenylist
 
+  scope :paid, -> { where(role: :paid)}
+  scope :unpaid, -> { where(role: :unpaid)}
+  scope :admin, -> { where(role: :admin)}
 end

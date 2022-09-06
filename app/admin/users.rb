@@ -6,6 +6,7 @@ ActiveAdmin.register User do
     end
     
     index do
+      selectable_column
       column :id
       column :name 
       column :email
@@ -25,9 +26,14 @@ ActiveAdmin.register User do
       f.input :password_confirmation, :as => :password
       f.input :city, :as => :string
       f.input :country, :as => :string
+      f.input :role, as: :select, collection: [["Paid", "paid"], ["Unpaid", "unpaid"], ["Admin", "admin"]]
     end
     f.actions
   end
   
-  
+  scope:all
+    scope:paid
+    scope:unpaid
+    scope:admin
+
 end

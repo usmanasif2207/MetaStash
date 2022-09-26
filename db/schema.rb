@@ -72,7 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_115346) do
     t.string "reward_type", default: "Dollar"
     t.float "reward_amount", default: 0.0
     t.boolean "is_active", default: false
-    t.float "longitude"
+    t.float "is_active"
     t.float "latitude"
     t.datetime "time_to_active"
     t.datetime "created_at", null: false

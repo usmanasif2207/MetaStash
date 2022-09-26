@@ -62,7 +62,7 @@ class PollController < ApplicationController
     
     def index
         @polls = Poll.all
-        if @polls.present? || @polls.is_active== true
+        if @polls.present? && @polls.is_active== true
             @i = 0
                 # # create array with name with 4 objects...
                 @ngo1 = Ngo.find_by_id(@polls[@i].ngo_id_1_id)

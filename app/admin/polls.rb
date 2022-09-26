@@ -19,6 +19,7 @@ ActiveAdmin.register Poll do
     column :ngo_4_votes
     column :is_active
     column :created_at  
+    actions
 end
 
   form url:"/admin/create/polls" , method: :post do |f|

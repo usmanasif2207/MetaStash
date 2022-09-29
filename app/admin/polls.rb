@@ -1,5 +1,6 @@
 ActiveAdmin.register Poll do
-  actions :index, :show
+  actions :all, :except => [:new]
+
   controller do
     def permitted_params
     params.permit!
@@ -22,7 +23,7 @@ ActiveAdmin.register Poll do
     actions
 end
 
-  form url:"/admin/create/polls" , method: :post do |f|
+  form url:"/users/registerPoll" , method: :post do |f|
     f.inputs 'Register' do
       f.input :ngo_id_1_id
       f.input :ngo_id_2_id , required: true

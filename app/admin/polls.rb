@@ -20,18 +20,9 @@ ActiveAdmin.register Poll do
     column :ngo_4_votes
     column :is_active
     column :created_at  
+    column :updated_at
     actions
 end
 
-  form url:"/users/registerPoll" , method: :post do |f|
-    f.inputs 'Register' do
-      f.input :ngo_id_1_id
-      f.input :ngo_id_2_id , required: true
-      f.input :ngo_id_3_id
-      f.input :ngo_id_4_id
-      f.input :is_active, as: :select, collection: [["Yes", true], ["No", false]], required: true
-    end
-    f.actions
-  end
   
 end

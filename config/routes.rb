@@ -6,12 +6,11 @@ Rails.application.routes.draw do
                  sessions: 'users/sessions',
                  registrations: 'users/registrations'
              }
- #Additional Routes 
+ #Additional Routes
  post "/admin/add_bulk_drops/import/drops", to:"drop#import"
  get '/cities', to: "drop#city"
  get '/province', to: "drop#province"
 #----------------------------------------------------------------
-
   post "/users/collectDrop", to:"drop#collect"
   post "/users/updateUserPaymentStatus", to:"updatepayment#update"
   post "/users/createFeedback", to:"feedback#create"
@@ -24,6 +23,4 @@ Rails.application.routes.draw do
   get '/users/getNGOs', to: "ngo#index"
   get '/users/getActivePolls', to: "poll#index"
   get '/users/testUTC', to: "utc#test"
-  
-  
 end

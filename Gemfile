@@ -71,7 +71,7 @@ group :test do
   gem "webdrivers"
 end
 #USER ADDED
-gem 'devise', '~> 4.6.1'
+gem 'devise'
 gem 'devise-jwt'
 gem 'rack-cors'
 gem 'dotenv-rails', groups: [:development, :test]

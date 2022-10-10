@@ -10,6 +10,7 @@ ActiveAdmin.register Poll do
   index do
     selectable_column
     column :id
+    column  "Created By", :user_name 
     column  "Ngo 1", :ngo_id_1.name 
     column :ngo_1_votes
     column "Ngo 2",:ngo_id_2.name

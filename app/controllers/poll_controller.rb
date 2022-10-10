@@ -48,12 +48,12 @@ class PollController < ApplicationController
                 )
                 render json: {
                     message: "Poll created successfully for 30 days",
-                     status: 404
+                     status: 200
                   }, status: :ok
                 else
                     render json: {
                         message: "An Active Poll already exists",
-                         status: 404
+                         status: 500
                       }, status: :ok
                 end
             end

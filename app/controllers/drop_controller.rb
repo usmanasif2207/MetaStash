@@ -44,13 +44,13 @@ class DropController < ApplicationController
             elsif @drop.is_active == true
                 @user.total_collection = @user.total_collection + @drop.reward_amount
                 @user.save
-                @drop.is_active = false
-                @drop.reward_amount = 0.0
-                @drop.save
                 render json: {
                     message: "Drop Collected!  #{@drop.reward_amount}$ added to User id: #{@user.id}",
                     status: 200
                 }, status: :ok
+                @drop.is_active = false
+                @drop.reward_amount = 0.0
+                @drop.save
             else
                 render json: {
                     message: "Drop already Collected!",

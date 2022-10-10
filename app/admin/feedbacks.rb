@@ -10,6 +10,7 @@ ActiveAdmin.register Feedback do
     index do
       selectable_column
       column :id
+      column "User", :user_name
       column :message_heading
       column :message_details
       column :is_resolved

@@ -14,6 +14,7 @@ ActiveAdmin.register User do
       column :role
       column :payment_status
       column :payment_date
+      column :total_collection
       actions
   end
 

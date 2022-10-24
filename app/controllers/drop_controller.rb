@@ -1,5 +1,5 @@
 class DropController < ApplicationController
-#Drops Controller
+
     def show
         @user = User.find_by_id(params[:id])
         if @user.nil?
@@ -46,7 +46,7 @@ class DropController < ApplicationController
                 @user.save
                 render json: {
                     message: "Drop Collected!  #{@drop.reward_amount}$ added to User id: #{@user.id}",
-                    balance: @user.total_collection
+                    balance: @user.total_collection,
                     status: 200
                 }, status: :ok
                 @drop.is_active = false
